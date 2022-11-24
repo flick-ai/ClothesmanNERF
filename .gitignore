@@ -4,3 +4,4 @@ dataset/
 experiments
 experiments/
 third_parties/smpl/models/
+third_parties/lpips/weights/v0.1/

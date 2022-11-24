@@ -1,0 +1,4 @@
+dataset:
+  path: /home/wenhao/CV/Dataset
+  subject: 'dembele'
+  sex: 'neutral'

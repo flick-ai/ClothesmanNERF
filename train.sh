@@ -1,1 +1,0 @@
-python train.py --cfg configs/human_nerf/wild/monocular/single_gpu.yaml --subject jntm

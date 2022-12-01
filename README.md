@@ -1,4 +1,4 @@
-# HumanNeRF: Free-viewpoint Rendering of Moving People from Monocular Video (CVPR 2022)
+# ClothesmanNERF
 
 [Project Page](https://grail.cs.washington.edu/projects/humannerf/) | [Paper](https://arxiv.org/abs/2201.04127) | [Video](https://youtu.be/GM-RoZEymmw)
 
@@ -38,7 +38,7 @@ Below we take the subject 387 as a running example.
 
 ### `Prepare a dataset`
 
-First, download ZJU-Mocap dataset from [here](https://github.com/zju3dv/neuralbody/blob/master/INSTALL.md#zju-mocap-dataset). 
+First, download ZJU-Mocap dataset from [here](https://github.com/zju3dv/neuralbody/blob/master/INSTALL.md#zju-mocap-dataset).
 
 Second, modify the yaml file of subject 387 at `tools/prepare_zju_mocap/387.yaml`. In particular,  `zju_mocap_path` should be the directory path of the ZJU-Mocap dataset.
 
@@ -50,7 +50,7 @@ dataset:
 
 ...
 ```
-    
+
 Finally, run the data preprocessing script.
 
     cd tools/prepare_zju_mocap
@@ -63,7 +63,7 @@ Now you can either download a pre-trained model by running the script.
 
     ./scripts/download_model.sh 387
 
-or train a model by yourself. We used 4 GPUs (NVIDIA RTX 2080 Ti) to train a model. 
+or train a model by yourself. We used 4 GPUs (NVIDIA RTX 2080 Ti) to train a model.
 
     python train.py --cfg configs/human_nerf/zju_mocap/387/adventure.yaml
 
@@ -77,7 +77,7 @@ Render the frame input (i.e., observed motion sequence).
 
     python run.py \
         --type movement \
-        --cfg configs/human_nerf/zju_mocap/387/adventure.yaml 
+        --cfg configs/human_nerf/zju_mocap/387/adventure.yaml
 
 Run free-viewpoint rendering on a particular frame (e.g., frame 128).
 
@@ -91,7 +91,7 @@ Render the learned canonical appearance (T-pose).
 
     python run.py \
         --type tpose \
-        --cfg configs/human_nerf/zju_mocap/387/adventure.yaml 
+        --cfg configs/human_nerf/zju_mocap/387/adventure.yaml
 
 In addition, you can find the rendering scripts in `scripts/zju_mocap`.
 
@@ -131,7 +131,7 @@ This json file contains metadata for video frames, including:
 - human body pose (SMPL poses and betas coefficients)
 - camera pose (camera intrinsic and extrinsic matrices). We follow [OpenCV](https://learnopencv.com/geometry-of-image-formation/) camera coordinate system and use [pinhole camera model](https://staff.fnwi.uva.nl/r.vandenboomgaard/IPCV20162017/LectureNotes/CV/PinholeCamera/PinholeCamera.html).
 
-You can run SMPL-based human pose detectors (e.g., [SPIN](https://github.com/nkolot/SPIN), [VIBE](https://github.com/mkocabas/VIBE), or [ROMP](https://github.com/Arthur151/ROMP)) on a monocular video to get body poses as well as camera poses. 
+You can run SMPL-based human pose detectors (e.g., [SPIN](https://github.com/nkolot/SPIN), [VIBE](https://github.com/mkocabas/VIBE), or [ROMP](https://github.com/Arthur151/ROMP)) on a monocular video to get body poses as well as camera poses.
 
 
 ```javascript
@@ -142,7 +142,7 @@ You can run SMPL-based human pose detectors (e.g., [SPIN](https://github.com/nko
         "poses": [
             -3.1341, ..., 1.2532
         ],
-        // A (10,) array: SMPL coefficients controlling body shape. 
+        // A (10,) array: SMPL coefficients controlling body shape.
         "betas": [
             0.33019, ..., 1.0386
         ],
@@ -178,7 +178,7 @@ Once the dataset is properly created, run the script to complete dataset prepara
 
 ### `Train a model`
 
-Now we are ready to lanuch a training. By default, we used 4 GPUs (NVIDIA RTX 2080 Ti) to train a model. 
+Now we are ready to lanuch a training. By default, we used 4 GPUs (NVIDIA RTX 2080 Ti) to train a model.
 
     python train.py --cfg configs/human_nerf/wild/monocular/adventure.yaml
 
@@ -192,7 +192,7 @@ Render the frame input (i.e., observed motion sequence).
 
     python run.py \
         --type movement \
-        --cfg configs/human_nerf/wild/monocular/adventure.yaml 
+        --cfg configs/human_nerf/wild/monocular/adventure.yaml
 
 Run free-viewpoint rendering on a particular frame (e.g., frame 128).
 
@@ -206,7 +206,7 @@ Render the learned canonical appearance (T-pose).
 
     python run.py \
         --type tpose \
-        --cfg configs/human_nerf/wild/monocular/adventure.yaml 
+        --cfg configs/human_nerf/wild/monocular/adventure.yaml
 
 In addition, you can find the rendering scripts in `scripts/wild`.
 
@@ -221,10 +221,10 @@ If you find our work useful, please consider citing:
 ```BibTeX
 @InProceedings{weng_humannerf_2022_cvpr,
     title     = {Human{N}e{RF}: Free-Viewpoint Rendering of Moving People From Monocular Video},
-    author    = {Weng, Chung-Yi and 
-                 Curless, Brian and 
-                 Srinivasan, Pratul P. and 
-                 Barron, Jonathan T. and 
+    author    = {Weng, Chung-Yi and
+                 Curless, Brian and
+                 Srinivasan, Pratul P. and
+                 Barron, Jonathan T. and
                  Kemelmacher-Shlizerman, Ira},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
     month     = {June},

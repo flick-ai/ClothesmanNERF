@@ -1,36 +1,20 @@
 # ClothesmanNERF
 
-[Project Page](https://grail.cs.washington.edu/projects/humannerf/) | [Paper](https://arxiv.org/abs/2201.04127) | [Video](https://youtu.be/GM-RoZEymmw)
-
-This is an official implementation. The codebase is implemented using [PyTorch](https://pytorch.org/) and tested on [Ubuntu](https://ubuntu.com/) 20.04.4 LTS.
+这是我们CV作业的github储存仓库，用于实现从两个视频中提取人物进行三维建模并进行姿势与服装的迁移。
 
 ## Prerequisite
 
 ### `Configure environment`
 
-Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (recommended) or [Anaconda](https://www.anaconda.com/).
+请确认您已经配置好我们所要求的环境，环境需求之后会补充到下文。
+如要成功运行本代码，需准备好四个conda环境：vibe, detectron, humannerf, must。 前两个环境将用来数据集生成， 后两个环境用来运行我们的代码。
 
-Create and activate a virtual environment.
+### `Dataset Generation`
 
-    conda create --name humannerf python=3.7
-    conda activate humannerf
+#### `data preparation`
+请准备好两段视频：Source Video和Target Video我们的工作将实现将Target Video中的人物姿态和服装迁移到Source Video中的人物上。
 
-Install the required packages.
-
-    pip install -r requirements.txt
-
-### `Download SMPL model`
-
-Download the gender neutral SMPL model from [here](https://smplify.is.tue.mpg.de/), and unpack **mpips_smplify_public_v2.zip**.
-
-Copy the smpl model.
-
-    SMPL_DIR=/path/to/smpl
-    MODEL_DIR=$SMPL_DIR/smplify_public/code/models
-    cp $MODEL_DIR/basicModel_neutral_lbs_10_207_0_v1.0.0.pkl third_parties/smpl/models
-
-Follow [this page](https://github.com/vchoutas/smplx/tree/master/tools) to remove Chumpy objects from the SMPL model.
-
+#### `run pipline`
 
 ## Run on ZJU-Mocap Dataset
 

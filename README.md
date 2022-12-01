@@ -7,7 +7,7 @@
 ### `Configure environment`
 
 请确认您已经配置好我们所要求的环境，环境需求之后会补充到下文。
-如要成功运行本代码，需准备好四个conda环境：vibe, detectron, humannerf, must。 前两个环境将用来数据集生成， 后两个环境用来运行我们的代码。
+如要成功运行本代码，需准备好四个conda环境：vibe, detectron, humannerf, must。 前两个环境将用来数据集生成， 后两个环境用来运行我们的代码。关于前两个环境的搭建，我们强烈建议您git clone前两个开源仓库的代码并安装所需环境。
 
 ### `Dataset Generation`
 
